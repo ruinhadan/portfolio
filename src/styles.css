@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: 0;
+}
+
+.switch, .lamp {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 35vh; */
+    width: 30vw;
+}
+
+.lamp-image {
+    height: auto;
+    width: 30%;
+    aspect-ratio: 173/328;
+    z-index: 2;
+}
+
+.top-image {
+    height: auto;
+    width: 4%;
+}
+
+#bottom {
+    --top-position: calc(328/173 * 7.9vw);
+    display: block;
+    background-color: yellow;
+    width: 100%;
+    height: calc(100% - var(--top-position));
+    position: absolute;
+    top: var(--top-position);
+    z-index: 1;
+    clip-path: polygon(45.5% 0, 54.5% 0, 100% 70%, 100% 100%, 0 100%, 0 70%);
+}
